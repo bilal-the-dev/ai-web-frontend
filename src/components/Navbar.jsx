@@ -1,16 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
+
+import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 {
   /* <FaAngleDown /> */
 }
 const Navbar = () => {
   const [toggle, settoggle] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const menuRef = useRef(null);
+  const menuItems = [
+    {
+      icon: "",
+      title: "Attendify",
+      path: "product/Attendify",
+    },
+    {
+      icon: "",
+      title: "VisitorVue",
+      path: "product/VisitorVue",
+    },
+    {
+      icon: "",
+      title: "OmniRoad",
+      path: "product/OmniRoad",
+    },
+  ];
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsHovered(false); // Close the menu
+      }
+    };
 
+    // Bind the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Cleanup the event listener on component unmount
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
-    <header className="">
-      <nav className="w-full overflow-hidden  justify-between items-center flex bg-[#031223] p-8">
+    <header className="relative">
+      <nav className="w-full justify-between items-center flex bg-[#031223] p-8">
         <div className="logo">
           <img
             src="https://landing.ai/wp-content/uploads/2024/06/DarkLogo.svg"
@@ -27,15 +61,41 @@ const Navbar = () => {
               Home
             </Link>
           </div>
-          <div className="flex justify-center items-center">
-            <Link
-              to="/product"
-              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 rounded transition duration-300"
-              activeClassName="text-blue-400"
-            >
-              Products
-            </Link>
+          <div
+            className="relative"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            ref={menuRef}
+          >
+            <div className="flex items-center gap-1">
+              <div className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 rounded transition duration-300">
+                Products
+              </div>
+              <ChevronDown
+                className={`w-4 h-4 text-gray-300 transition-transform duration-300 ${
+                  isHovered ? "rotate-180" : ""
+                }`}
+              />
+            </div>
+
+            {isHovered && (
+              <div className="absolute top-full left-0 mt-1 w-64 bg-gray-800 rounded-md shadow-lg z-50">
+                <div className="py-2">
+                  {menuItems.map((item, index) => (
+                    <Link
+                      key={index}
+                      to={item.path}
+                      className="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white transition duration-200"
+                    >
+                      <span className="mr-3">{item.icon}</span>
+                      <span>{item.title}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
+
           <div className="flex justify-center items-center">
             <Link
               to="/industry"
@@ -45,20 +105,18 @@ const Navbar = () => {
               Industries
             </Link>
           </div>
-          <div className="flex justify-center items-center">
-            <Link
-              to="/contact"
-              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 rounded transition duration-300"
-              activeClassName="text-blue-400"
-            >
-              Contact
-            </Link>
-          </div>
+          <div className="flex justify-center items-center"></div>
         </div>
 
         <div className="hidden lg:block text-white  font-bold">
           <button className="bg-blue-600 rounded-l-full rounded-r-full px-6 py-2 lg:text-sm xl:text-base ">
-            Get A demo
+            <Link
+              to="/build-your-vision"
+              className="px-4 py-2 text-gray-300 rounded transition duration-300"
+              activeClassName="text-blue-400"
+            >
+              Let’s Build Your Vision
+            </Link>
           </button>
         </div>
 

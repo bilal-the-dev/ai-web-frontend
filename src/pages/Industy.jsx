@@ -107,7 +107,7 @@ const HeroSection = () => {
           <motion.div className="md:w-1/2 text-white" variants={slideIn}>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {HERO_SECTION.title}{" "}
-              <span className="inline-block">
+              <span className="inline-block mt-6">
                 <span className="border border-white/30 bg-white/10 px-3 py-1">
                   {HERO_SECTION.highlightText}
                 </span>

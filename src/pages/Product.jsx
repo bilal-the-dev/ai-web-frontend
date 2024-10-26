@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, XCircle } from "lucide-react";
-import { pageContent } from "../constants/product";
+import { products } from "../constants/product";
 import AdditionalSections from "../components/AdditionalSections";
+import { Navigate, useParams, useSearchParams } from "react-router-dom";
 
 const fadeIn = {
   hidden: { opacity: 0 },
@@ -15,6 +16,14 @@ const slideIn = {
 };
 
 const LandingPage = () => {
+  const { text } = useParams();
+
+  const pageContent = products[text];
+
+  if (!pageContent) {
+    return <Navigate to="/product/landingLens" replace />;
+  }
+
   return (
     <div className="bg-[#031223] text-white p-6 min-h-screen">
       {/* Hero Section */}
@@ -305,7 +314,7 @@ const LandingPage = () => {
           </motion.div>
         </motion.div>
       </motion.div>
-      <AdditionalSections />
+      <AdditionalSections id={text} />
     </div>
   );
 };

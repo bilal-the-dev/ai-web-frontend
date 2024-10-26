@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, BarChart3, ArrowRight, Users, Zap } from "lucide-react";
-import { pageContent } from "../constants/product";
+import { products } from "../constants/product";
+import { Navigate } from "react-router-dom";
 // Additional sections to be added to the existing LandingPage component
 
 const fadeIn = {
@@ -13,7 +14,12 @@ const slideIn = {
   hidden: { x: -50, opacity: 0 },
   visible: { x: 0, opacity: 1 },
 };
-const AdditionalSections = () => {
+const AdditionalSections = ({ id }) => {
+  const pageContent = products[id];
+
+  if (!pageContent) {
+    return <Navigate to="/product/landingLens" replace />;
+  }
   return (
     <>
       {/* Analytics Dashboard Section */}

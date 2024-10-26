@@ -5,7 +5,7 @@ export const CONTACT_US_CONTENT = {
       "We're here to help and answer any question you might have. We look forward to hearing from you.",
   },
   contactInfo: {
-    title: "Contact Information",
+    title: "Let’s Build Your Vision",
     address: "195 Page Mill Rd, Palo Alto, CA 94306",
     phone: "+1 (555) 123-4567",
     email: "hello@landing.ai",
@@ -18,10 +18,18 @@ export const CONTACT_US_CONTENT = {
   contactForm: {
     title: "Send Us a Message",
     fields: [
-      { name: "name", label: "Name", type: "text" },
-      { name: "email", label: "Email", type: "email" },
-      { name: "subject", label: "Subject", type: "text" },
-      { name: "message", label: "Message", type: "textarea" },
+      { name: "Industry", label: "Industry", type: "text" },
+      {
+        name: "data",
+        label: "Type of Visual Data (e.g., images, videos, live feeds)",
+        type: "text",
+      },
+      { name: "Challenges", label: "Challenges", type: "textarea" },
+      {
+        name: "Additional Information",
+        label: "Additional Information",
+        type: "text",
+      },
     ],
     submitButton: "Send Message",
   },
