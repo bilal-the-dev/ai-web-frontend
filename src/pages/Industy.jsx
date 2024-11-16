@@ -192,9 +192,6 @@ const HeroSection = () => {
           ))}
         </motion.div>
 
-        {/* Stats Section */}
-        <StatsSection />
-
         {/* CTA Section */}
         <motion.div
           className="text-center py-20"
@@ -204,16 +201,27 @@ const HeroSection = () => {
           variants={fadeIn}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Visual Inspection?
+            Unlock the potential of AI-powered computer vision to drive
+            innovation in your industry
           </h2>
-          <motion.button
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center gap-2 mx-auto hover:bg-blue-700 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Started
-            <ArrowRight size={20} />
-          </motion.button>
+          <div className="flex">
+            <motion.button
+              className="bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center gap-2 mx-auto hover:bg-blue-700 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get Started
+              <ArrowRight size={20} />
+            </motion.button>
+            <motion.button
+              className="bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center gap-2 mx-auto hover:bg-blue-700 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Request a demo
+              <ArrowRight size={20} />
+            </motion.button>
+          </div>
         </motion.div>
       </div>
     </div>

@@ -3,41 +3,58 @@
 import Hero from "../assets/industry/hero.webp";
 import Feature from "../assets/industry/e1.webp";
 export const HERO_SECTION = {
-  title: "Computer Vision in",
-  highlightText: "Electronics",
+  title: "AI-Driven Computer Vision Solutions in",
+  highlightText: "Industry",
   description:
-    "Electronic parts are complex and may present a multitude of defects. The application of artificial intelligence and deep learning solutions in the electronics industry can help.",
+    "From enhancing retail operations to revolutionizing healthcare, discover how DevelMo's computer vision technology transforms industries for the better.",
   imagePath: Hero,
 };
 
 export const VISION_BANNER = {
-  title: "Turbocharge Visual AI Deployment",
+  title: "AI-Driven Computer Vision Solutions",
   subtitle:
-    "Rapidly prototype, deploy, and scale vision tasks to enrich your visual intelligence",
+    "DevelMo's computer vision technology transforms industries for the better.",
 };
 
 export const FEATURES = [
   {
-    title: "Wafer Defect Inspection",
+    title: "Retail",
     description:
-      "Wafer inspection involves inspecting each individual layer of a semiconductor wafer for defects before applying the next layer. Defects can include cracks, scratches, missing components, and edge defects. While machine vision technology provides a means for automated visual inspection, the range of potential defects on a wafer is significant. Our deep learning software can be trained on a set of images and can help with",
-    highlightText: "auto defect classification",
+      "Transform the retail experience by leveraging AI-powered computer vision. With applications such as customer behavior analytics, inventory tracking, and theft prevention, retailers can gain valuable insights to enhance store layouts, improve product placement, and create personalized customer experiences. Our solutions also enable real-time monitoring of foot traffic, helping retailers adapt to ",
+    highlightText: "peak hours and optimize staffing.",
     imgSrc: Feature,
     imgAlt: "Wafer Inspection",
   },
   {
-    title: "Optical Pattern Recognition",
+    title: "Healthcare",
     description:
-      "Optical pattern recognition involves analyzing visual patterns using machine vision technology to detect issues such as alignment errors, material inconsistencies, or design flaws. Our AI-based system offers precise pattern matching and defect detection.",
-    highlightText: "high precision detection",
+      "Revolutionize healthcare with the power of computer vision. From assisting in medical imaging analysis to monitoring patient vitals and even supporting surgeons in real-time, computer vision enhances diagnostic accuracy and patient care. By detecting anomalies in X-rays, MRIs, and CT scans, our technology enables early diagnosis and reduces human error. In surgery, AI-assisted cameras can alert surgeons to vital issues, ",
+    highlightText: "improving patient outcomes and minimizing risks.",
     imgSrc: Feature,
     imgAlt: "Optical Pattern Recognition",
   },
   {
-    title: "Semiconductor Quality Control",
+    title: "Manufacturing",
     description:
-      "Our software is designed to automate the quality control process in semiconductor manufacturing, ensuring that each wafer meets strict quality standards. With deep learning capabilities, the system continually improves over time.",
-    highlightText: "automated quality control",
+      "Achieve unmatched quality and efficiency in manufacturing through computer vision. Our technology enables automated quality inspection to detect product defects, ensuring only the highest quality items reach consumers. Assembly line monitoring helps to identify bottlenecks, streamline workflows, and optimize resource usage. Additionally, real-time fault detection reduces waste by catching issues early, preventing costly downtime, ",
+    highlightText: "and enhancing overall productivity.",
+    imgSrc: Feature,
+    imgAlt: "Semiconductor Quality Control",
+  },
+  {
+    title: "Transportation & Smart Cities",
+    description:
+      "Pave the way for safer, smarter cities with computer vision. Our solutions provide real-time traffic analysis for optimized flow, help detect road accidents instantly to alert emergency responders, and monitor traffic density to reduce congestion. By integrating with city infrastructure, computer vision can also enhance public transportation, manage pedestrian traffic, and support sustainable urban development. OmniRoad AI is a prime example,",
+    highlightText:
+      " offering actionable insights for efficient road management.",
+    imgSrc: Feature,
+    imgAlt: "Semiconductor Quality Control",
+  },
+  {
+    title: "Agriculture",
+    description:
+      "Empower precision farming and sustainable practices with AI-powered computer vision. Our technology enables crop monitoring to assess health, identify pests, and detect nutrient deficiencies, ensuring timely interventions for optimal yield. With disease detection capabilities, farmers can spot issues early to reduce crop loss, and livestock monitoring helps track the health and activity of animals, improving farm management. This data-driven approach enhances productivity while conserving resources, .",
+    highlightText: "supporting sustainable agriculture",
     imgSrc: Feature,
     imgAlt: "Semiconductor Quality Control",
   },

@@ -3,11 +3,13 @@ import { FaAngleDown } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 
 import { ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 {
   /* <FaAngleDown /> */
 }
 const Navbar = () => {
+  const location = useLocation();
+  const isProductPage = location.pathname.startsWith("/product");
   const [toggle, settoggle] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const menuRef = useRef(null);
@@ -19,13 +21,13 @@ const Navbar = () => {
     },
     {
       icon: "",
-      title: "VisitorVue",
-      path: "product/VisitorVue",
+      title: "OmniRoad 2.0",
+      path: "product/OmniRoad",
     },
     {
       icon: "",
-      title: "OmniRoad",
-      path: "product/OmniRoad",
+      title: "CrowIQ",
+      path: "product/CrowdIQ",
     },
   ];
   useEffect(() => {
@@ -44,7 +46,11 @@ const Navbar = () => {
   }, []);
   return (
     <header className="relative">
-      <nav className="w-full justify-between items-center flex bg-[#031223] p-8">
+      <nav
+        className={`w-full justify-between items-center flex p-8 ${
+          isProductPage ? "bg-[#121212]" : "bg-[#031223]"
+        }`}
+      >
         <div className="logo">
           <img
             src="https://landing.ai/wp-content/uploads/2024/06/DarkLogo.svg"

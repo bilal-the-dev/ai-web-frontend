@@ -23,7 +23,7 @@ const AdditionalSections = ({ id }) => {
   return (
     <>
       {/* Analytics Dashboard Section */}
-      <motion.div
+      {/* <motion.div
         className="bg-gradient-to-br from-blue-900 to-blue-800 text-white p-8 rounded-lg my-16"
         initial="hidden"
         animate="visible"
@@ -63,7 +63,7 @@ const AdditionalSections = ({ id }) => {
             />
           </div>
         </motion.div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Integration Section */}
       <motion.div

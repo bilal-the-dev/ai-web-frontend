@@ -1,10 +1,13 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { CheckCircle2, XCircle } from "lucide-react";
+import React, { useEffect } from "react";
+import { motion, steps } from "framer-motion";
+import { CheckCircle2, XCircle, Bell, Cloud, Home } from "lucide-react";
 import { products } from "../constants/product";
 import AdditionalSections from "../components/AdditionalSections";
 import { Navigate, useParams, useSearchParams } from "react-router-dom";
 
+import feature1 from "../assets/product/feature-1.gif";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const fadeIn = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
@@ -16,6 +19,13 @@ const slideIn = {
 };
 
 const LandingPage = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1500, // Animation duration in milliseconds
+      once: false, // Whether animation should happen only once
+      delay: 200,
+    });
+  }, []);
   const { text } = useParams();
 
   const pageContent = products[text];
@@ -25,7 +35,7 @@ const LandingPage = () => {
   }
 
   return (
-    <div className="bg-[#031223] text-white p-6 min-h-screen">
+    <div className="bg-[#121212] text-white p-6 min-h-screen">
       {/* Hero Section */}
       <motion.div
         className="flex flex-col items-center gap-8"
@@ -38,7 +48,7 @@ const LandingPage = () => {
           variants={slideIn}
         >
           <span className="bg-gradient-to-r tracking-wider from-white to-blue-text bg-clip-text text-transparent">
-            {pageContent.hero.title}
+            {pageContent.hero.title} <br /> {pageContent.hero?.breakTitle}
           </span>
         </motion.h3>
         <motion.p className="text-center" variants={slideIn}>
@@ -65,6 +75,7 @@ const LandingPage = () => {
       <motion.div
         className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:py-28 text-white"
         initial="hidden"
+        data-aos="fade-up"
         animate="visible"
         variants={fadeIn}
       >
@@ -77,6 +88,12 @@ const LandingPage = () => {
         </motion.div>
 
         <motion.div className="w-full lg:w-1/2 max-w-2xl" variants={slideIn}>
+          <div className="flex">
+            <CheckCircle2 className="w-6 h-6 mr-2 flex-shrink-0 text-blue-400" />
+            <p className="text-lg mb-4 text-center lg:text-left">
+              {pageContent.feature_1.mainTitle}
+            </p>
+          </div>
           <motion.h3
             className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
             variants={slideIn}
@@ -85,6 +102,7 @@ const LandingPage = () => {
               {pageContent.feature_1.title}
             </span>
           </motion.h3>
+
           <motion.p
             className="text-lg mb-8 text-center lg:text-left"
             variants={slideIn}
@@ -128,10 +146,17 @@ const LandingPage = () => {
       <motion.div
         className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:py-28 text-white"
         initial="hidden"
+        data-aos="fade-up"
         animate="visible"
         variants={fadeIn}
       >
         <motion.div className="w-full lg:w-1/2 max-w-2xl" variants={slideIn}>
+          <div className="flex">
+            <Bell className="w-6 h-6 mr-2 flex-shrink-0 text-blue-400" />
+            <p className="text-lg mb-4 text-center lg:text-left">
+              {pageContent.feature_2.mainTitle}
+            </p>
+          </div>
           <motion.h3
             className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
             variants={slideIn}
@@ -162,6 +187,7 @@ const LandingPage = () => {
 
           <motion.div
             className="flex justify-center lg:justify-start space-x-4"
+            data-aos="fade-up"
             variants={slideIn}
           >
             {pageContent.feature_2.buttons.map((button, index) => (
@@ -255,6 +281,7 @@ const LandingPage = () => {
       <motion.div
         className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:py-28 text-white"
         initial="hidden"
+        data-aos="fade-up"
         animate="visible"
         variants={fadeIn}
       >
@@ -267,6 +294,12 @@ const LandingPage = () => {
         </motion.div>
 
         <motion.div className="w-full lg:w-1/2 max-w-2xl" variants={slideIn}>
+          <div className="flex">
+            <Cloud className="w-6 h-6 mr-2 flex-shrink-0 text-blue-400" />
+            <p className="text-lg mb-4 text-center lg:text-left">
+              {pageContent.feature_3.mainTitle}
+            </p>
+          </div>
           <motion.h3
             className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
             variants={slideIn}
@@ -314,6 +347,112 @@ const LandingPage = () => {
           </motion.div>
         </motion.div>
       </motion.div>
+      <motion.div
+        className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:py-28 text-white"
+        initial="hidden"
+        data-aos="fade-up"
+        animate="visible"
+        variants={fadeIn}
+      >
+        <motion.div className="w-full lg:w-1/2 max-w-2xl" variants={slideIn}>
+          <div className="flex">
+            <Home className="w-6 h-6 mr-2 flex-shrink-0 text-blue-400" />
+            <p className="text-lg mb-4 text-center lg:text-left">
+              {pageContent.feature_4.mainTitle}
+            </p>
+          </div>
+          <motion.h3
+            className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
+            variants={slideIn}
+          >
+            <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent tracking-wider">
+              {pageContent.feature_4.title}
+            </span>
+          </motion.h3>
+          <motion.p
+            className="text-lg mb-8 text-center lg:text-left"
+            variants={slideIn}
+          >
+            {pageContent.feature_4.description}
+          </motion.p>
+
+          <motion.ul className="space-y-4 mb-8" variants={slideIn}>
+            {pageContent.feature_4.bulletPoints.map((item, index) => (
+              <motion.li
+                key={index}
+                className="flex items-start"
+                variants={slideIn}
+              >
+                <CheckCircle2 className="w-6 h-6 mr-2 flex-shrink-0 text-blue-400" />
+                <span>{item}</span>
+              </motion.li>
+            ))}
+          </motion.ul>
+
+          <motion.div
+            className="flex justify-center lg:justify-start space-x-4"
+            variants={slideIn}
+          >
+            {pageContent.feature_3.buttons.map((button, index) => (
+              <button
+                key={index}
+                className={`${
+                  button.primary
+                    ? "bg-blue-500 hover:bg-blue-600 text-white"
+                    : "border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
+                } font-bold py-2 px-6 rounded-full transition duration-300`}
+              >
+                {button.text}
+              </button>
+            ))}
+          </motion.div>
+        </motion.div>
+        <motion.div className="w-full lg:w-1/2 max-w-2xl" variants={slideIn}>
+          <img
+            src={pageContent.feature_4.image}
+            alt="Visual Prompting Interface"
+            className="w-full h-auto rounded-lg shadow-lg"
+          />
+        </motion.div>
+      </motion.div>
+
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-200 mb-4">
+            {pageContent.last.title}
+          </h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            {pageContent.last.desc}
+          </p>
+        </div>
+
+        {/* Steps Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {pageContent.last.steps.map((step, index) => (
+            <div key={index} className="overflow-hidden shadow-lg">
+              <div className="p-6">
+                <div className="mb-6">
+                  <span className="text-blue-300 font-bold text-xl">
+                    {step.number}. {step.title}
+                  </span>
+                  <p className="text-blue-100 mt-2 text-sm">
+                    {step.description}
+                  </p>
+                </div>
+                <div className="bg-white rounded-lg h-64 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={step.img}
+                    alt="Labeling example"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <AdditionalSections id={text} />
     </div>
   );
