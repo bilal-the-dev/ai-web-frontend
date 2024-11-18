@@ -4,6 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 
 import { ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { COLORS } from "../constants/config";
 {
   /* <FaAngleDown /> */
 }
@@ -128,7 +129,9 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:block text-white  font-bold">
-          <button className="bg-blue-600 rounded-l-full rounded-r-full px-6 py-2 lg:text-sm xl:text-base ">
+          <button
+            className={`${COLORS.titel_bg} rounded-l-full rounded-r-full px-6 py-2 lg:text-sm xl:text-base `}
+          >
             <Link
               to="/build-your-vision"
               className="px-4 py-2 text-gray-300 rounded transition duration-300"

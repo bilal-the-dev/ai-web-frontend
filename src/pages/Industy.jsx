@@ -63,7 +63,8 @@ const FeatureSection = ({
             color: COLORS.text,
           }}
         >
-          {description} <span className="text-blue-500">{highlightText}</span>
+          {description}{" "}
+          <span className={`${COLORS.title_color}`}>{highlightText}</span>
         </p>
       </motion.div>
       <motion.div className="md:w-1/3" variants={scaleIn}>
@@ -165,7 +166,7 @@ const HeroSection = () => {
         variants={fadeIn}
       >
         <h3 className="text-3xl text-center lg:text-5xl font-semibold">
-          <span className="text-blue-500">{VISION_BANNER.title}</span>
+          <span className={`${COLORS.title_color}`}>{VISION_BANNER.title}</span>
         </h3>
         <h4
           className="text-sm text-center w-[80%] mx-auto lg:w-auto lg:mx-0 lg:text-2xl tracking-wider text-white"
@@ -243,7 +244,7 @@ const HeroSection = () => {
           </h2>
           <div className="flex">
             <motion.button
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center gap-2 mx-auto hover:bg-blue-700 transition-colors"
+              className={`${COLORS.titel_bg} text-white px-8 py-3 rounded-lg flex items-center gap-2 mx-auto hover:bg-blue-700 transition-colors`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -251,7 +252,7 @@ const HeroSection = () => {
               <ArrowRight size={20} />
             </motion.button>
             <motion.button
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center gap-2 mx-auto hover:bg-blue-700 transition-colors"
+              className={`${COLORS.titel_bg} text-white px-8 py-3 rounded-lg flex items-center gap-2 mx-auto hover:bg-blue-700 transition-colors`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
