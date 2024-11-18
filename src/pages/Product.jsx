@@ -4,7 +4,7 @@ import { CheckCircle2, XCircle, Bell, Cloud, Home } from "lucide-react";
 import { products } from "../constants/product";
 import AdditionalSections from "../components/AdditionalSections";
 import { Navigate, useParams, useSearchParams } from "react-router-dom";
-
+import { COLORS } from "../constants/config";
 import feature1 from "../assets/product/feature-1.gif";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -35,7 +35,14 @@ const LandingPage = () => {
   }
 
   return (
-    <div className="bg-[#121212] text-white p-6 min-h-screen">
+    <div
+      style={{
+        backgroundColor: COLORS.background,
+        color: COLORS.text,
+        padding: "1.5rem",
+        minHeight: "100vh",
+      }}
+    >
       {/* Hero Section */}
       <motion.div
         className="flex flex-col items-center gap-8"
@@ -47,18 +54,28 @@ const LandingPage = () => {
           className="text-3xl text-center pt-28 lg:text-5xl font-semibold"
           variants={slideIn}
         >
-          <span className="bg-gradient-to-r tracking-wider from-white to-blue-text bg-clip-text text-transparent">
-            {pageContent.hero.title} <br /> {pageContent.hero?.breakTitle}
+          <span className="font-bold text-blue-600">
+            <span style={{ color: COLORS.text }}>
+              {pageContent.hero.title}{" "}
+            </span>
+            <br />{" "}
+            <span className="text-blue-600">
+              {pageContent.hero?.breakTitle}
+            </span>
           </span>
         </motion.h3>
         <motion.p className="text-center" variants={slideIn}>
           {pageContent.hero.subtitle}
         </motion.p>
         <motion.div
-          className="hidden lg:block text-white font-bold"
+          className="hidden lg:block font-bold"
+          style={{ color: COLORS.text }}
           variants={slideIn}
         >
-          <button className="bg-blue-600 rounded-l-full rounded-r-full px-6 py-2 lg:text-sm xl:text-base">
+          <button
+            className="bg-blue-600 rounded-l-full rounded-r-full px-6 py-2 lg:text-sm xl:text-base"
+            style={{ color: COLORS.background }}
+          >
             {pageContent.hero.buttonText}
           </button>
         </motion.div>
@@ -73,6 +90,9 @@ const LandingPage = () => {
 
       {/* Features Section */}
       <motion.div
+        style={{
+          color: COLORS.text,
+        }}
         className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:py-28 text-white"
         initial="hidden"
         data-aos="fade-up"
@@ -98,7 +118,7 @@ const LandingPage = () => {
             className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
             variants={slideIn}
           >
-            <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent tracking-wider">
+            <span className="text-blue-600 font-bold">
               {pageContent.feature_1.title}
             </span>
           </motion.h3>
@@ -144,6 +164,9 @@ const LandingPage = () => {
       </motion.div>
 
       <motion.div
+        style={{
+          color: COLORS.text,
+        }}
         className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:py-28 text-white"
         initial="hidden"
         data-aos="fade-up"
@@ -161,9 +184,7 @@ const LandingPage = () => {
             className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
             variants={slideIn}
           >
-            <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent tracking-wider">
-              {pageContent.feature_2.title}
-            </span>
+            <span className="text-blue-600">{pageContent.feature_2.title}</span>
           </motion.h3>
           <motion.p
             className="text-lg mb-8 text-center lg:text-left"
@@ -279,6 +300,9 @@ const LandingPage = () => {
       </motion.div>
 
       <motion.div
+        style={{
+          color: COLORS.text,
+        }}
         className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:py-28 text-white"
         initial="hidden"
         data-aos="fade-up"
@@ -304,9 +328,7 @@ const LandingPage = () => {
             className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
             variants={slideIn}
           >
-            <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent tracking-wider">
-              {pageContent.feature_3.title}
-            </span>
+            <span className="text-blue-600">{pageContent.feature_3.title}</span>
           </motion.h3>
           <motion.p
             className="text-lg mb-8 text-center lg:text-left"
@@ -347,7 +369,11 @@ const LandingPage = () => {
           </motion.div>
         </motion.div>
       </motion.div>
+
       <motion.div
+        style={{
+          color: COLORS.text,
+        }}
         className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 py-12 lg:py-28 text-white"
         initial="hidden"
         data-aos="fade-up"
@@ -365,9 +391,7 @@ const LandingPage = () => {
             className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
             variants={slideIn}
           >
-            <span className="bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent tracking-wider">
-              {pageContent.feature_4.title}
-            </span>
+            <span className="text-blue-600">{pageContent.feature_4.title}</span>
           </motion.h3>
           <motion.p
             className="text-lg mb-8 text-center lg:text-left"
@@ -418,25 +442,50 @@ const LandingPage = () => {
 
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-200 mb-4">
+        <div
+          className="text-center mb-16"
+          style={{
+            color: COLORS.text,
+          }}
+        >
+          <h2
+            className="text-4xl font-bold text-gray-200 mb-4"
+            style={{
+              color: COLORS.text,
+            }}
+          >
             {pageContent.last.title}
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p
+            className="text-xl text-gray-200 max-w-3xl mx-auto"
+            style={{
+              color: COLORS.text,
+            }}
+          >
             {pageContent.last.desc}
           </p>
         </div>
 
         {/* Steps Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div
+          className="grid md:grid-cols-2 gap-8"
+          style={{
+            color: COLORS.text,
+          }}
+        >
           {pageContent.last.steps.map((step, index) => (
             <div key={index} className="overflow-hidden shadow-lg">
               <div className="p-6">
                 <div className="mb-6">
-                  <span className="text-blue-300 font-bold text-xl">
+                  <span className="text-blue-500 font-bold text-xl">
                     {step.number}. {step.title}
                   </span>
-                  <p className="text-blue-100 mt-2 text-sm">
+                  <p
+                    className="text-blue-100 mt-2 text-sm"
+                    style={{
+                      color: COLORS.text,
+                    }}
+                  >
                     {step.description}
                   </p>
                 </div>
@@ -453,7 +502,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <AdditionalSections id={text} />
+      {/* <AdditionalSections id={text} /> */}
     </div>
   );
 };

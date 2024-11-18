@@ -427,7 +427,7 @@ export const products = {
       image: feature1,
     },
     last: {
-      title: "How",
+      title: "How CrowdiQ Works",
       steps: [
         {
           number: 1,

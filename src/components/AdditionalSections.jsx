@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, BarChart3, ArrowRight, Users, Zap } from "lucide-react";
 import { products } from "../constants/product";
 import { Navigate } from "react-router-dom";
+import { COLORS } from "../constants/config";
 // Additional sections to be added to the existing LandingPage component
 
 const fadeIn = {
@@ -81,7 +82,12 @@ const AdditionalSections = ({ id }) => {
               {pageContent.integration.title}
             </span>
           </h2>
-          <p className="text-lg text-gray-300">
+          <p
+            className="text-lg text-gray-300"
+            style={{
+              color: COLORS.text,
+            }}
+          >
             {pageContent.integration.description}
           </p>
         </motion.div>
@@ -99,8 +105,22 @@ const AdditionalSections = ({ id }) => {
                   <ArrowRight className="text-blue-400" size={24} />
                 )}
               </div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-300">{feature.description}</p>
+              <h3
+                className="text-xl font-semibold mb-2"
+                style={{
+                  color: COLORS.text,
+                }}
+              >
+                {feature.title}
+              </h3>
+              <p
+                className="text-gray-300"
+                style={{
+                  color: COLORS.text,
+                }}
+              >
+                {feature.description}
+              </p>
             </div>
           ))}
         </motion.div>

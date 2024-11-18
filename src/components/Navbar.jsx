@@ -48,7 +48,7 @@ const Navbar = () => {
     <header className="relative">
       <nav
         className={`w-full justify-between items-center flex p-8 ${
-          isProductPage ? "bg-[#121212]" : "bg-[#031223]"
+          isProductPage ? "bg-[#fffff]" : "bg-[#031223]"
         }`}
       >
         <div className="logo">
@@ -58,10 +58,12 @@ const Navbar = () => {
           />
         </div>
         <div className="hidden lg:flex lg:text-lg gap-x-8 xl:text-xl font-semibold text-white">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center ">
             <Link
               to="/"
-              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 rounded transition duration-300"
+              className={`px-4 py-2 ${
+                isProductPage ? "text-gray-800" : "text-gray-300"
+              } hover:text-white hover:bg-gray-700 rounded transition duration-300`}
               activeClassName="text-blue-400"
             >
               Home
@@ -74,11 +76,17 @@ const Navbar = () => {
             ref={menuRef}
           >
             <div className="flex items-center gap-1">
-              <div className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 rounded transition duration-300">
+              <div
+                className={`px-4 py-2  ${
+                  isProductPage ? "text-gray-800" : "text-gray-300"
+                } hover:text-white hover:bg-gray-700 rounded transition duration-300`}
+              >
                 Products
               </div>
               <ChevronDown
-                className={`w-4 h-4 text-gray-300 transition-transform duration-300 ${
+                className={`w-4 h-4 ${
+                  isProductPage ? "text-gray-800" : "text-gray-300"
+                } transition-transform duration-300 ${
                   isHovered ? "rotate-180" : ""
                 }`}
               />
@@ -91,7 +99,7 @@ const Navbar = () => {
                     <Link
                       key={index}
                       to={item.path}
-                      className="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white transition duration-200"
+                      className={`flex items-center px-4 py-3 text-gray-300  hover:bg-gray-700 hover:text-white transition duration-200`}
                     >
                       <span className="mr-3">{item.icon}</span>
                       <span>{item.title}</span>
@@ -105,7 +113,9 @@ const Navbar = () => {
           <div className="flex justify-center items-center">
             <Link
               to="/industry"
-              className="px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 rounded transition duration-300"
+              className={`px-4 py-2 ${
+                isProductPage ? "text-gray-800" : "text-gray-300"
+              } hover:text-white hover:bg-gray-700 rounded transition duration-300`}
               activeClassName="text-blue-400"
             >
               Industries
