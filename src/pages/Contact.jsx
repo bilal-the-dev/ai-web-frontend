@@ -12,7 +12,7 @@ import {
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { CONTACT_US_CONTENT } from "../constants/contact";
-
+import { COLORS } from "./../constants/config";
 const AnimatedSection = ({ children }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.1 });
@@ -41,7 +41,15 @@ const AnimatedSection = ({ children }) => {
 
 const ContactUsPage = () => {
   return (
-    <div className="bg-[#031223] text-white min-h-screen flex flex-col items-center">
+    <div
+      className=" min-h-screen flex flex-col items-center"
+      style={{
+        backgroundColor: COLORS.background,
+        color: COLORS.text,
+        padding: "1.5rem",
+        minHeight: "100vh",
+      }}
+    >
       <main className="max-w-5xl w-full py-16 px-6 sm:px-10 lg:px-16">
         <AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
@@ -49,13 +57,13 @@ const ContactUsPage = () => {
             {/* Increased gap */}
             <div className="space-y-8">
               <h3 className="text-4xl lg:text-5xl font-semibold mb-4">
-                <span className="bg-gradient-to-r tracking-wider from-white to-blue-400 bg-clip-text text-transparent">
+                <span className="text-blue-600">
                   {CONTACT_US_CONTENT.contactInfo.title}
                 </span>
               </h3>
               <p className="text-lg leading-relaxed">
                 Do you have a{" "}
-                <span className="text-blue-400 font-semibold">
+                <span className="text-blue-500 font-semibold">
                   unique challenge
                 </span>{" "}
                 or need a custom computer vision solution? We’re here to help
@@ -65,7 +73,7 @@ const ContactUsPage = () => {
               </p>
               <p className="text-lg leading-relaxed">
                 At DevelMo, we specialize in creating{" "}
-                <span className="text-blue-400 font-semibold">
+                <span className="text-blue-500 font-semibold">
                   customized computer vision applications{" "}
                 </span>
                 that solve real-world problems—no off-the-shelf products, just
@@ -74,7 +82,7 @@ const ContactUsPage = () => {
               <p className="text-lg leading-relaxed">
                 For any other inquiries or product support, feel free to contact
                 us directly. We look forward to
-                <span className="text-blue-400 font-semibold">
+                <span className="text-blue-500 font-semibold">
                   {" "}
                   collaborating on your vision
                 </span>
@@ -90,7 +98,7 @@ const ContactUsPage = () => {
                   <div key={field.name} className="space-y-2">
                     <label
                       htmlFor={field.name}
-                      className="block text-sm font-semibold text-gray-300"
+                      className="block text-sm font-semibold text-gray-800"
                     >
                       {field.label}
                     </label>
@@ -99,7 +107,7 @@ const ContactUsPage = () => {
                         id={field.name}
                         name={field.name}
                         rows="4"
-                        className="w-full px-4 py-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 placeholder-gray-500 text-sm"
+                        className="w-full px-4 py-3 bg-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500 placeholder-gray-500 text-sm"
                         placeholder={`Enter your ${field.label.toLowerCase()}...`}
                       />
                     ) : (
@@ -107,7 +115,7 @@ const ContactUsPage = () => {
                         type={field.type}
                         id={field.name}
                         name={field.name}
-                        className="w-full px-4 py-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 placeholder-gray-500 text-sm"
+                        className="w-full px-4 py-3 bg-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500 placeholder-gray-500 text-sm"
                         placeholder={`Enter your ${field.label.toLowerCase()}...`}
                       />
                     )}

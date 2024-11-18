@@ -8,7 +8,7 @@ import {
   EFFICIENCY_CARDS,
   STATS,
 } from "../constants/industry";
-
+import { COLORS } from "../constants/config";
 // Animation variants
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -37,7 +37,7 @@ const FeatureSection = ({
   reverse = false,
 }) => (
   <motion.div
-    className={`mb-20 bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 backdrop-blur-sm shadow-xl`}
+    className={`mb-20 bg-black/10 rounded-xl p-8 border border-gray-700/50 backdrop-blur-sm shadow-xl`}
     initial="initial"
     whileInView="animate"
     viewport={{ once: true }}
@@ -49,9 +49,21 @@ const FeatureSection = ({
       } items-center justify-between gap-12`}
     >
       <motion.div className="md:w-1/2" variants={slideIn}>
-        <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
-        <p className="text-gray-300 leading-relaxed">
-          {description} <span className="text-blue-400">{highlightText}</span>
+        <h2
+          className="text-3xl font-bold text-white mb-4"
+          style={{
+            color: COLORS.text,
+          }}
+        >
+          {title}
+        </h2>
+        <p
+          className="text-gray-300 leading-relaxed"
+          style={{
+            color: COLORS.text,
+          }}
+        >
+          {description} <span className="text-blue-500">{highlightText}</span>
         </p>
       </motion.div>
       <motion.div className="md:w-1/3" variants={scaleIn}>
@@ -95,7 +107,13 @@ const StatsSection = () => (
 
 const HeroSection = () => {
   return (
-    <div className="bg-[#031223] min-h-screen">
+    <div
+      style={{
+        backgroundColor: COLORS.background,
+        color: COLORS.text,
+        minHeight: "100vh",
+      }}
+    >
       {/* Hero Section */}
       <motion.div
         className="container mx-auto px-6 py-16"
@@ -104,16 +122,27 @@ const HeroSection = () => {
         variants={fadeIn}
       >
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          <motion.div className="md:w-1/2 text-white" variants={slideIn}>
+          <motion.div
+            className="md:w-1/2 text-white"
+            variants={slideIn}
+            style={{
+              color: COLORS.text,
+            }}
+          >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {HERO_SECTION.title}{" "}
               <span className="inline-block mt-6">
-                <span className="border border-white/30 bg-white/10 px-3 py-1">
+                <span className="border border-black/30 bg-black/10 px-3 py-1">
                   {HERO_SECTION.highlightText}
                 </span>
               </span>
             </h1>
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p
+              className="text-gray-300 text-lg leading-relaxed"
+              style={{
+                color: COLORS.text,
+              }}
+            >
               {HERO_SECTION.description}
             </p>
           </motion.div>
@@ -136,11 +165,14 @@ const HeroSection = () => {
         variants={fadeIn}
       >
         <h3 className="text-3xl text-center lg:text-5xl font-semibold">
-          <span className="bg-gradient-to-r tracking-wider from-white to-blue-400 bg-clip-text text-transparent">
-            {VISION_BANNER.title}
-          </span>
+          <span className="text-blue-500">{VISION_BANNER.title}</span>
         </h3>
-        <h4 className="text-sm text-center w-[80%] mx-auto lg:w-auto lg:mx-0 lg:text-2xl tracking-wider text-white">
+        <h4
+          className="text-sm text-center w-[80%] mx-auto lg:w-auto lg:mx-0 lg:text-2xl tracking-wider text-white"
+          style={{
+            color: COLORS.text,
+          }}
+        >
           {VISION_BANNER.subtitle}
         </h4>
       </motion.div>
@@ -200,7 +232,12 @@ const HeroSection = () => {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-white mb-6"
+            style={{
+              color: COLORS.text,
+            }}
+          >
             Unlock the potential of AI-powered computer vision to drive
             innovation in your industry
           </h2>
