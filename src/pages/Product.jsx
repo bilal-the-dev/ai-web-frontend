@@ -59,7 +59,7 @@ const LandingPage = () => {
               {pageContent.hero.title}{" "}
             </span>
             <br />{" "}
-            <span className="text-blue-600">
+            <span className={`${COLORS.title_color}`}>
               {pageContent.hero?.breakTitle}
             </span>
           </span>
@@ -73,8 +73,10 @@ const LandingPage = () => {
           variants={slideIn}
         >
           <button
-            className="bg-blue-600 rounded-l-full rounded-r-full px-6 py-2 lg:text-sm xl:text-base"
-            style={{ color: COLORS.background }}
+            className={`${COLORS.titel_bg} rounded-l-full rounded-r-full px-6 py-2 lg:text-sm xl:text-base`}
+            style={{
+              color: COLORS.background,
+            }}
           >
             {pageContent.hero.buttonText}
           </button>
@@ -109,7 +111,9 @@ const LandingPage = () => {
 
         <motion.div className="w-full lg:w-1/2 max-w-2xl" variants={slideIn}>
           <div className="flex">
-            <CheckCircle2 className="w-6 h-6 mr-2 flex-shrink-0 text-blue-400" />
+            <CheckCircle2
+              className={`${COLORS.title_color} w-6 h-6 mr-2 flex-shrink-0`}
+            />
             <p className="text-lg mb-4 text-center lg:text-left">
               {pageContent.feature_1.mainTitle}
             </p>
@@ -118,7 +122,7 @@ const LandingPage = () => {
             className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
             variants={slideIn}
           >
-            <span className="text-blue-600 font-bold">
+            <span className={`${COLORS.title_color} font-bold`}>
               {pageContent.feature_1.title}
             </span>
           </motion.h3>
@@ -184,7 +188,9 @@ const LandingPage = () => {
             className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
             variants={slideIn}
           >
-            <span className="text-blue-600">{pageContent.feature_2.title}</span>
+            <span className={`${COLORS.title_color}`}>
+              {pageContent.feature_2.title}
+            </span>
           </motion.h3>
           <motion.p
             className="text-lg mb-8 text-center lg:text-left"
@@ -237,7 +243,7 @@ const LandingPage = () => {
 
       {/* Data-Centric AI Section */}
       <motion.div
-        className="bg-blue-600 text-white p-8 flex items-center"
+        className={`${COLORS.titel_bg} text-white p-8 flex items-center`}
         initial="hidden"
         animate="visible"
         variants={fadeIn}
@@ -265,7 +271,7 @@ const LandingPage = () => {
             ))}
           </motion.ul>
           <motion.button
-            className="mt-6 bg-white text-blue-600 px-6 py-2 rounded-full font-semibold"
+            className={`${COLORS.title_color} mt-6 bg-white px-6 py-2 rounded-full font-semibold`}
             variants={slideIn}
           >
             {pageContent.dataCentricAI.buttonText}
@@ -328,7 +334,9 @@ const LandingPage = () => {
             className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
             variants={slideIn}
           >
-            <span className="text-blue-600">{pageContent.feature_3.title}</span>
+            <span className={`${COLORS.title_color}`}>
+              {pageContent.feature_3.title}
+            </span>
           </motion.h3>
           <motion.p
             className="text-lg mb-8 text-center lg:text-left"
@@ -391,7 +399,9 @@ const LandingPage = () => {
             className="text-3xl lg:text-5xl font-semibold mb-6 text-center lg:text-left"
             variants={slideIn}
           >
-            <span className="text-blue-600">{pageContent.feature_4.title}</span>
+            <span className={`${COLORS.title_color}`}>
+              {pageContent.feature_4.title}
+            </span>
           </motion.h3>
           <motion.p
             className="text-lg mb-8 text-center lg:text-left"
@@ -477,11 +487,11 @@ const LandingPage = () => {
             <div key={index} className="overflow-hidden shadow-lg">
               <div className="p-6">
                 <div className="mb-6">
-                  <span className="text-blue-500 font-bold text-xl">
+                  <span className={`${COLORS.title_color} font-bold text-xl`}>
                     {step.number}. {step.title}
                   </span>
                   <p
-                    className="text-blue-100 mt-2 text-sm"
+                    className={`${COLORS.title_color} mt-2 text-sm`}
                     style={{
                       color: COLORS.text,
                     }}

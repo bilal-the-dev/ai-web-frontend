@@ -7,6 +7,7 @@ import slide3 from "../assets/slider/pic3.png";
 import rabbit from "../assets/slider/icons/rabbit.svg";
 import video from "../assets/Home/desktop-1.mp4";
 import { motion } from "framer-motion";
+import { COLORS } from "../constants/config";
 
 const Home = () => {
   const [activeButton, setActiveButton] = useState("LandingLens");
@@ -40,10 +41,16 @@ const Home = () => {
   // ];
 
   return (
-    <div className="bg-[#031223]">
+    <div style={{ backgroundColor: COLORS.background, color: COLORS.text }}>
       {/* ..hero section */}
-      <div className="w-full bg-[#031223] mb-24 text-white">
-        <div className="w-full bg-[#031223] h-auto flex lg:flex-row flex-col justify-center items-center mb-24">
+      <div
+        className="w-full mb-24 text-white"
+        style={{ backgroundColor: COLORS.background, color: COLORS.text }}
+      >
+        <div
+          className="w-full h-auto flex lg:flex-row flex-col justify-center items-center mb-24"
+          style={{ backgroundColor: COLORS.background, color: COLORS.text }}
+        >
           {/* Left Section */}
           <motion.div
             className="left h-full"
@@ -66,7 +73,7 @@ const Home = () => {
             <div className="flex justify-center mt-12 h-full w-full gap-y-8 items-center flex-col">
               <div className="et_pb_text_inner flex flex-col justify-center items-center">
                 <h1 className="text-5xl font-bold text-center">
-                  <span className="bg-gradient-to-r from-blue-text tracking-wider to-green-text bg-clip-text text-transparent">
+                  <span className={`${COLORS.title_color}`}>
                     Redefining Vision
                   </span>
                 </h1>
@@ -76,7 +83,10 @@ const Home = () => {
                   </span>
                 </h1>
               </div>
-              <div className="text-2xl text-nowrap text-white text-center font-bold">
+              <div
+                className="text-2xl text-nowrap text-center font-bold"
+                style={{ color: COLORS.text }}
+              >
                 Transform your images, videos, and streams into actionable
                 insights with custom-built <br /> computer vision solutions.
               </div>
@@ -109,7 +119,10 @@ const Home = () => {
         </div>
 
         {/* Video Section */}
-        <div className="bg-[#031223] py-6">
+        <div
+          className=" py-6"
+          style={{ backgroundColor: COLORS.background, color: COLORS.text }}
+        >
           <div className="flex flex-col gap-y-3 justify-center items-center">
             <motion.h3
               className="text-3xl text-center lg:text-5xl font-semibold"
@@ -117,7 +130,7 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="bg-gradient-to-r tracking-wider from-white to-blue-text bg-clip-text text-transparent">
+              <span className={`${COLORS.title_color}`}>
                 Streamline Your Vision Solutions
               </span>
             </motion.h3>
@@ -126,6 +139,7 @@ const Home = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              style={{ color: COLORS.text }}
             >
               Power your business with tailored solutions for object detection,
               real-time tracking, and more—crafted to extract meaningful
@@ -174,11 +188,14 @@ const Home = () => {
       </div>
 
       {/* changing sliders sections */}
-      <div className="bg-[#031223] p-2 lg:p-16">
+      <div
+        className=" p-2 lg:p-16"
+        style={{ backgroundColor: COLORS.background }}
+      >
         <div>
           <div className="et_pb_text_inner">
             <h3 className="text-3xl  lg:text-6xl font-semibold">
-              <span className="bg-gradient-to-r from-white to-blue-text  bg-clip-text text-transparent">
+              <span className={`${COLORS.title_color}`}>
                 Visual AI: Tailored for Your Unique Vision Tasks
               </span>
             </h3>
@@ -209,15 +226,30 @@ const Home = () => {
               <div className="flex lg:flex-row flex-col w-full lg:w-auto gap-x-8 py-8 justify-center">
                 <div className="text-4xl font-semibold  w-full lg:w-1/2 text-white">
                   <div className="-ml-4 flex ">
-                    <div className="text-white w-1 bg-gradient-to-b from-blue-text to-green-text "></div>
-                    <div className="ml-4 text-2xl lg:text-4xl">
+                    <div
+                      className="w-1 bg-gradient-to-b from-blue-text to-green-text"
+                      style={{ color: COLORS.text }}
+                    ></div>
+                    <div
+                      className="ml-4 text-2xl lg:text-4xl"
+                      style={{ color: COLORS.text }}
+                    >
                       <h1>Attendance has never been easier</h1>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-y-2 py-4 mt-4">
-                    <div className="flex justify-center  items-start">
+                  <div
+                    className="flex flex-col gap-y-2 py-4 mt-4"
+                    style={{ color: COLORS.text }}
+                  >
+                    <div
+                      className="flex justify-center  items-start"
+                      style={{ color: COLORS.text }}
+                    >
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="text-white font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         Real-Time Attendance: Making attendance management
                         seamless for teachers by automating student recognition
                         using cameras and facial detection
@@ -225,14 +257,20 @@ const Home = () => {
                     </div>
                     <div className="flex justify-center items-start">
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         Cloud-Powered: Fast and accurate processing, even on
                         low-end devices, thanks to cloud integration
                       </div>
                     </div>
                     <div className="flex justify-center items-start">
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="text-white font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         One-Click Setup: Teachers can set up and start using
                         Attendify with minimal effort, requiring no technical
                         expertise
@@ -240,7 +278,10 @@ const Home = () => {
                     </div>
                     <div className="flex justify-center items-start">
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="text-white font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         Automated Reporting: Automatically generates detailed
                         attendance reports and analysis, streamlining
                         administrative processes for schools
@@ -248,7 +289,9 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="flex justify-center items-center lg:justify-start lg:items-start mt-6 gap-x-6">
-                    <button className="block px-4 py-1 text-base bg-blue-500 rounded-l-full rounded-r-full text-center text-white">
+                    <button
+                      className={`${COLORS.titel_bg} block px-4 py-1 text-base rounded-l-full rounded-r-full text-center text-white`}
+                    >
                       Try LandingLens
                     </button>
                     <button className="block px-4 py-1 text-base bg-[#031223] border-[1px]  border-white rounded-l-full rounded-r-full text-center text-white">
@@ -274,42 +317,59 @@ const Home = () => {
                 <div className="text-4xl font-semibold  w-full lg:w-1/2 text-white">
                   <div className="-ml-4 flex ">
                     <div className="text-white w-1 bg-gradient-to-b from-blue-text to-green-text "></div>
-                    <div className="ml-4 text-2xl lg:text-4xl">
+                    <div
+                      className="ml-4 text-2xl lg:text-4xl"
+                      style={{ color: COLORS.text }}
+                    >
                       <h1>Unlock Visual AI Capabilities in Snowflake</h1>
                     </div>
                   </div>
                   <div className="flex flex-col gap-y-2 py-4 mt-4">
                     <div className="flex justify-center  items-start">
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="text-white font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         Accelerated MLOps: Reduce time-to-value with streamlined
                         cycles
                       </div>
                     </div>
                     <div className="flex justify-center items-start">
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="text-white font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         Accelerated MLOps: Reduce time-to-value with streamlined
                         cycles
                       </div>
                     </div>
                     <div className="flex justify-center items-start">
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="text-white font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         Accelerated MLOps: Reduce time-to-value with streamlined
                         cycles
                       </div>
                     </div>
                     <div className="flex justify-center items-start">
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="text-white font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         Accelerated MLOps: Reduce time-to-value with streamlined
                         cycles
                       </div>
                     </div>
                   </div>
                   <div className="flex justify-center items-center lg:justify-start lg:items-start mt-6 gap-x-6">
-                    <button className="block px-4 py-1 text-base bg-blue-500 rounded-l-full rounded-r-full text-center text-white">
+                    <button
+                      className={`${COLORS.titel_bg} block px-4 py-1 text-base rounded-l-full rounded-r-full text-center text-white`}
+                    >
                       Try LandingLens
                     </button>
                     <button className="block px-4 py-1 text-base bg-[#031223] border-[1px]  border-white rounded-l-full rounded-r-full text-center text-white">
@@ -334,42 +394,59 @@ const Home = () => {
                 <div className="text-4xl font-semibold  w-full lg:w-1/2 text-white">
                   <div className="-ml-4 flex ">
                     <div className="text-white w-1 bg-gradient-to-b from-blue-text to-green-text "></div>
-                    <div className="ml-4 text-2xl lg:text-4xl">
+                    <div
+                      className="ml-4 text-2xl lg:text-4xl"
+                      style={{ color: COLORS.text }}
+                    >
                       <h1>A Visual AI Pilot for Developers</h1>
                     </div>
                   </div>
                   <div className="flex flex-col gap-y-2 py-4 mt-4">
                     <div className="flex justify-center  items-start">
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="text-white font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         Accelerated MLOps: Reduce time-to-value with streamlined
                         cycles
                       </div>
                     </div>
                     <div className="flex justify-center items-start">
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="text-white font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         Accelerated MLOps: Reduce time-to-value with streamlined
                         cycles
                       </div>
                     </div>
                     <div className="flex justify-center items-start">
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="text-white font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         Accelerated MLOps: Reduce time-to-value with streamlined
                         cycles
                       </div>
                     </div>
                     <div className="flex justify-center items-start">
                       <img src={rabbit} alt="" />
-                      <div className="text-white font-semibold text-lg">
+                      <div
+                        className="text-white font-semibold text-lg"
+                        style={{ color: COLORS.text }}
+                      >
                         Accelerated MLOps: Reduce time-to-value with streamlined
                         cycles
                       </div>
                     </div>
                   </div>
                   <div className="flex justify-center items-center lg:justify-start lg:items-start mt-6 gap-x-6">
-                    <button className="block px-4 py-1 text-base bg-blue-500 rounded-l-full rounded-r-full text-center text-white">
+                    <button
+                      className={`${COLORS.titel_bg} block px-4 py-1 text-base rounded-l-full rounded-r-full text-center text-white`}
+                    >
                       Try LandingLens
                     </button>
                     <button className="block px-4 py-1 text-base bg-[#031223] border-[1px]  border-white rounded-l-full rounded-r-full text-center text-white">
@@ -391,9 +468,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#031223] p-2 lg:p-16 flex flex-col gap-8 animate-fadeIn">
+      <div
+        className=" p-2 lg:p-16 flex flex-col gap-8 animate-fadeIn"
+        style={{ backgroundColor: COLORS.background }}
+      >
         <h3 className="text-3xl text-center lg:text-5xl font-semibold">
-          <span className="bg-gradient-to-r tracking-wider from-white to-blue-500 bg-clip-text text-transparent">
+          <span className={`${COLORS.title_color}`}>
             Empower Your Vision <br />
             with a Visual AI Platform
           </span>
@@ -439,15 +519,28 @@ const Home = () => {
                 >
                   {item.value}
                 </span>
-                <sup className="text-2xl text-white">%</sup>
-                <p className="text-white text-sm mt-2">{item.description}</p>
+                <sup
+                  className="text-2xl text-white"
+                  style={{ color: COLORS.text }}
+                >
+                  %
+                </sup>
+                <p
+                  className="text-white text-sm mt-2"
+                  style={{ color: COLORS.text }}
+                >
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="bg-[#031223] p-12 lg:p-16 flex flex-col gap-8 animate-fadeIn">
+      <div
+        className=" p-12 lg:p-16 flex flex-col gap-8 animate-fadeIn"
+        style={{ backgroundColor: COLORS.background }}
+      >
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="bg-gradient-to-br from-blue-500 to-green-400 rounded-lg p-8 flex-1 transition-transform transform hover:scale-105 animate-fadeIn">
             <div className="text-center">

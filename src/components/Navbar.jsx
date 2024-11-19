@@ -13,7 +13,8 @@ const Navbar = () => {
   const isProductPage =
     location.pathname.startsWith("/product") ||
     location.pathname.startsWith("/build-your-vision") ||
-    location.pathname.startsWith("/industry");
+    location.pathname.startsWith("/industry") ||
+    location.pathname.startsWith("/");
   const [toggle, settoggle] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const menuRef = useRef(null);
